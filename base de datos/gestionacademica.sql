@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-04-2024 a las 18:45:15
+-- Tiempo de generación: 18-04-2024 a las 19:24:14
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -51,9 +51,18 @@ INSERT INTO `carreras` (`idcarrera`, `nombrecarrera`, `idfacultad`) VALUES
 
 CREATE TABLE `estudiantes` (
   `idestudiante` int(11) NOT NULL,
-  `nombreestudiante` int(50) NOT NULL,
+  `nombreestudiante` varchar(50) NOT NULL,
   `idcarrera` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `estudiantes`
+--
+
+INSERT INTO `estudiantes` (`idestudiante`, `nombreestudiante`, `idcarrera`) VALUES
+(1, 'Niver Quiñones', 6),
+(2, 'sebastián Mejia', 6),
+(3, 'Daniel Alvarez', 6);
 
 -- --------------------------------------------------------
 
@@ -158,7 +167,7 @@ ALTER TABLE `carreras`
 -- AUTO_INCREMENT de la tabla `estudiantes`
 --
 ALTER TABLE `estudiantes`
-  MODIFY `idestudiante` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idestudiante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `facultades`
