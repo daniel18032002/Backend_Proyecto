@@ -74,10 +74,14 @@ app.put("/facultades/:id", async (req, res) => {
 
 // PATCH para modificar una columna específica de un registro
 app.patch("/facultades/:id", async (req, res) => {
-    try {
-      const id = req.params.id; // Obtener el ID del parámetro de la URL
-      const { columna, valor } = req.body; // Obtener los datos de la columna y su nuevo valor del cuerpo de la solicitud
-      
+  console.log("PATCH entrando")  
+  try {
+      const columna = Object.keys(body)[0];
+      const valor = body[columna]
+
+      console.log('id', id);
+      console.log('columna', columna);
+      console.log('valor', valor);
       // Verificar si el ID es válido 
       if (!id) {
         return res.status(400).json({ error: "Se requiere proporcionar un ID válido" });
@@ -126,5 +130,10 @@ app.delete("/facultades/:id", async (req, res) => {
       res.status(500).json({ error: "Error al eliminar registro" });
     }
 });
+
+
+
+
+
 
 
